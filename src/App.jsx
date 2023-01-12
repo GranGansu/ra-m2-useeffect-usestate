@@ -1,25 +1,25 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import Triangulo from './components/Triangulo'
-import Circulo from './components/Circulo'
-import Cuadrado from './components/Cuadrado'
+import Triangle from './components/Triangle'
+import Circle from './components/Circle'
+import Square from './components/Square'
 function App() {
-  const [triangulo, setTriangulo] = useState({ color: '#79d747', numero: '100' })
-  const [cuadrado, setCuadrado] = useState({ color: '#843333', numero: '99' })
-  const [circulo, setCirculo] = useState({ color: '#2c3fd7', numero: '98' })
+  const [triangle, setTriangle] = useState({ color: '#79d747', number: '100' })
+  const [square, setSquare] = useState({ color: '#843333', number: '99' })
+  const [circle, setCircle] = useState({ color: '#2c3fd7', number: '98' })
 
   useEffect(() => {
-    triangulo.color === cuadrado.color && circulo.color === cuadrado.color && alert('Todas las figuras tienen el mismo color')
-  }, [triangulo.color, cuadrado.color, circulo.color])
+    triangle.color === square.color && circle.color === square.color && alert('Todas las figuras tienen el mismo color')
+  }, [triangle.color, square.color, circle.color])
   useEffect(() => {
-    triangulo.numero === cuadrado.numero && circulo.numero === cuadrado.numero && alert('Todas las figuras tienen el mismo tamaño')
-  }, [triangulo.numero, cuadrado.numero, circulo.numero])
+    triangle.number === square.number && circle.number === square.number && alert('Todas las figuras tienen el mismo tamaño')
+  }, [triangle.number, square.number, circle.number])
   return (
     <div className="App">
       <h1>Ejercicio useState y useEffect</h1>
-      <Triangulo estado={triangulo} setter={setTriangulo}></Triangulo>
-      <Circulo estado={circulo} setter={setCirculo}></Circulo>
-      <Cuadrado estado={cuadrado} setter={setCuadrado}></Cuadrado>
+      <Triangle state={triangle} setter={setTriangle}></Triangle>
+      <Circle state={circle} setter={setCircle}></Circle>
+      <Square state={square} setter={setSquare}></Square>
     </div>
   );
 }
