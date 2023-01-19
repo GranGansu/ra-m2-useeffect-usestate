@@ -1,18 +1,21 @@
-import Label from './atoms/Label'
-import InputColor from './atoms/InputColor'
-import InputNumber from './atoms/InputNumber'
-import CircleSvg from './atoms/CircleSvg'
+import { CircleSvg } from './molecules/atoms/'
+import { InputColorGroup, InputNumberGroup } from './molecules/'
+import PropTypes from 'prop-types';
+
 export default function Circle({ state, setter }) {
     return (
         <div id="circle">
-            <form onChange={(e) => {
-                setter({ color: e.target.form.elements.color.value, number: e.target.form.elements.number.value })
-            }}>
-                <Label id="circleNumber">Circle size</Label><InputNumber id="circleNumber" number={state.number} />
+            <form>
+                <InputNumberGroup setter={setter} id="circleNumber" title="Circle number" number={state.number} />
                 <br />
-                <Label id="circleColor">Circle color</Label><InputColor id="circleColor" color={state.color} />
+                <InputColorGroup setter={setter} id="circleColor" title="Circle color" color={state.color} />
                 <CircleSvg color={state.color} size={state.number} />
             </form>
         </div>
     )
+}
+
+Circle.propTypes = {
+    state: PropTypes.object,
+    setter: PropTypes.func
 }

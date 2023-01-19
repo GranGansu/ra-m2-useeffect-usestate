@@ -4,10 +4,9 @@ import Triangle from './components/Triangle'
 import Circle from './components/Circle'
 import Square from './components/Square'
 function App() {
-  const [triangle, setTriangle] = useState({ color: '#79d747', number: '100' })
-  const [square, setSquare] = useState({ color: '#843333', number: '99' })
-  const [circle, setCircle] = useState({ color: '#2c3fd7', number: '98' })
-
+  const [triangle, setTriangle] = useState({ color: '#79d747', number: 100 })
+  const [square, setSquare] = useState({ color: '#843333', number: 99 })
+  const [circle, setCircle] = useState({ color: '#2c3fd7', number: 98 })
   useEffect(() => {
     triangle.color === square.color && circle.color === square.color && alert('Todas las figuras tienen el mismo color')
   }, [triangle.color, square.color, circle.color])
